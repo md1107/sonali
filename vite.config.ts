@@ -5,6 +5,9 @@ import { tempo } from "tempo-devtools/dist/vite";
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  ssr: {
+    noExternal: ['@radix-ui/*'], // exclude Radix from SSR
+  },
   base:
     process.env.NODE_ENV === "development"
       ? "/"
