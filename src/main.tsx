@@ -4,6 +4,10 @@ import App from "./App.tsx";
 import "./index.css";
 import { BrowserRouter } from "react-router-dom";
 
+if (typeof window === 'undefined') {
+  React.useLayoutEffect = React.useEffect;
+}
+
 if (import.meta.env.DEV) {
   import("tempo-devtools")
     .then(({ TempoDevtools }) => {
